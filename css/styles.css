@@ -188,11 +188,10 @@ p {
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
-  /* -webkit-background-clip: text; */
+  -webkit-background-clip: text;
   background-clip: text;
   /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent;
-  /* text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent; /* text-fill-color: transparent; */
 }
 
 .hero_section .hero_btn {
@@ -334,11 +333,10 @@ p {
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
-  /* -webkit-background-clip: text; */
+  -webkit-background-clip: text;
   background-clip: text;
   /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent;
-  /* text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent; /* text-fill-color: transparent; */
 }
 
 .team-track {
@@ -430,11 +428,10 @@ p {
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
-  /* -webkit-background-clip: text; */
+  -webkit-background-clip: text;
   background-clip: text;
   /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent;
-  /* text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent; /* text-fill-color: transparent; */
 }
 
 .brand-track {
@@ -516,11 +513,10 @@ p {
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
-  /* -webkit-background-clip: text; */
+  -webkit-background-clip: text;
   background-clip: text;
   /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent;
-  /* text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent; /* text-fill-color: transparent; */
 }
 
 /* ----------------------------------------------------------- */
@@ -561,11 +557,10 @@ p {
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
-  /* -webkit-background-clip: text; */
+  -webkit-background-clip: text;
   background-clip: text;
   /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent;
-  /* text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent; /* text-fill-color: transparent; */
 }
 
 .service-track {
@@ -891,11 +886,10 @@ p {
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
-  /* -webkit-background-clip: text; */
+  -webkit-background-clip: text;
   background-clip: text;
   /* 3. Make the text fill transparent to show the background */
   -webkit-text-fill-color: transparent;
-  /* text-fill-color: transparent; */
   font-size: 40px;
 }
 
