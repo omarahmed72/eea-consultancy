@@ -1,0 +1,1004 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  /* scroll-behavior: smooth; */
+}
+
+:root {
+  --primary-color: #003b40;
+  --secondary-color: #c9aa89;
+  --background-color: #dad4c4;
+  --text-color: #f7f2ef;
+  --accent-color: #040f0f;
+}
+
+/* #c6ad6871 */
+@font-face {
+  font-family: "myFirstFont";
+  src: url("../eec_fonts/ARBFONTS-DINNEXTLTARABIC-MEDIUM-4.TTF");
+}
+@font-face {
+  font-family: "headerFont";
+  src: url("../eec_fonts/ARBFONTS-DINNEXTLTARABIC-LIGHT-2-2.TTF");
+}
+
+body {
+  font-family: "myFirstFont";
+  /* background-color: var(--primary-color); */
+  background-image: url(../imgs/back.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #e0e0e0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1 {
+  /* 1. Define the gradient as a background image */
+  background-image: linear-gradient(
+    352deg,
+    var(--primary-color) 20%,
+    var(--secondary-color) 70%,
+    var(--primary-color),
+    var(--secondary-color)
+  ); /* Example: Red to Yellow to Blue */
+
+  /* 2. Clip the background to the text shape */
+  /* -webkit-background-clip: text; */
+  background-clip: text;
+  /* 3. Make the text fill transparent to show the background */
+  -webkit-text-fill-color: transparent;
+  /* text-fill-color: transparent; */
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-color);
+}
+p {
+  font-size: 1.708984375vw;
+  color: var(--primary-color); /* Bootstrap secondary gray */
+}
+
+.btn {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.btn:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+/* .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+} */
+
+/* .nav {
+  position: sticky;
+  top: 0;
+  background-color: rgba(5, 5, 16, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(96, 28, 252, 0.2);
+  z-index: 9999;
+  padding: 1rem 0;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #601cfc;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #601cfc;
+} */
+
+/* .navbar .container {
+  gap: 15rem;
+} */
+.nav-link {
+  color: var(--primary-color);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 1rem;
+}
+.navbar-scrolled {
+  background-color: var(--secondary-color);
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: var(--primary-color);
+}
+
+@media (min-width: 992px) {
+  .navbar .container {
+    gap: 15rem;
+  }
+  /* .navbar ul{
+    gap: 9px;
+  } */
+}
+/* End Navbar */
+
+/* ----------------------------------------------------------- */
+
+.landing img {
+  height: auto;
+}
+
+/* Hero Section */
+
+.hero_section .gradient-text,
+.hero_section .gradient-text span {
+  font-size: 4.5rem;
+  /* 1. Define the gradient as a background image */
+  background-image: linear-gradient(
+    0deg,
+    var(--primary-color) 20%,
+    var(--secondary-color) 70%,
+    var(--primary-color),
+    var(--secondary-color)
+  ); /* Example: Red to Yellow to Blue */
+
+  /* 2. Clip the background to the text shape */
+  /* -webkit-background-clip: text; */
+  background-clip: text;
+  /* 3. Make the text fill transparent to show the background */
+  -webkit-text-fill-color: transparent;
+  /* text-fill-color: transparent; */
+}
+
+.hero_section .hero_btn {
+  width: 15rem;
+  height: 3rem;
+  font-size: 22px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.hero_section .hero_btn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+/* .covar .image {
+  position: relative;
+  background-image: url(../imgs/logo_image.png);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
+/* .covar .image .hero_img {
+  width: 100%;
+} */
+
+/* .covar .content {
+  position: absolute;
+  top: 10rem;
+  left: 33rem;
+  z-index: 0;
+}
+
+.covar .content h1 {
+  font-size: 4rem;
+  font-family: "myFirstFont";
+}
+.covar .content h1 span {
+  color: var(--primary-color);
+  font-size: 4rem;
+  margin-left: 9rem;
+}
+
+.covar .content p {
+  max-width: 480px;
+}
+.covar .image .logo_image {
+  position: absolute;
+  top: 23rem;
+  left: 15rem;
+  z-index: 2;
+} */
+/* .covar .image .logo_image img{
+  border-radius: 1rem;
+  width: 20vw;
+ } */
+
+/* @media screen and (max-width: 767px) {
+  .covar .content h1 {
+    color: #ffffff;
+    font-size: 1rem;
+  }
+
+  .covar .content p {
+    color: #ffffff;
+    max-width: 480px;
+  }
+} */
+
+.who_we_are h1 {
+  font-size: 7vw;
+  border-right: 5px solid var(--primary-color);
+  width: 35%;
+  white-space: nowrap;
+  overflow: hidden;
+  /* animation: typing 2s steps(18), cursor 0.4s step-end infinite alternate; */
+
+  /* Infinite loop + blinking cursor */
+  animation: who_typing 10s steps(22) infinite,
+    /* Change 22 to your exact character count */ cursor 0.8s step-end infinite;
+}
+
+/* .who_we_are h1 span {
+  color: var(--secondary-color);
+} */
+
+/* .who_we_are .logo_image {
+  position: absolute;
+  top: -5rem;
+  right: -3rem;
+  z-index: 2;
+} */
+.who_we_are .logo_image img {
+  border-radius: 1rem;
+  width: 35vw;
+}
+.team-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.team-title {
+  text-align: center;
+  font-size: 47px;
+  font-weight: 700;
+  height: 4rem;
+  /* 1. Define the gradient as a background image */
+  background-image: linear-gradient(
+    352deg,
+    var(--primary-color) 20%,
+    var(--secondary-color) 70%,
+    var(--primary-color),
+    var(--secondary-color)
+  ); /* Example: Red to Yellow to Blue */
+
+  /* 2. Clip the background to the text shape */
+  /* -webkit-background-clip: text; */
+  background-clip: text;
+  /* 3. Make the text fill transparent to show the background */
+  -webkit-text-fill-color: transparent;
+  /* text-fill-color: transparent; */
+}
+
+.team-track {
+  display: flex;
+  width: max-content;
+  animation: scroll_1 9s linear infinite;
+}
+
+.team-slider:hover .team-track {
+  /* animation-play-state: paused; */
+}
+
+.team-group {
+  display: flex;
+  align-items: center;
+}
+
+.team-group img {
+  height: 300px;
+  margin: 0 35px;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  /* filter: grayscale(100%) brightness(0.7); */
+  filter: contrast(0.7);
+}
+
+.team-group img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%) brightness(1);
+}
+
+.team-group div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-top: 10px; */
+  margin: 0 35px;
+
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.team-group div p {
+  color: var(--secondary-color);
+}
+
+@keyframes scroll_1 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.brand-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.brand-title {
+  text-align: center;
+  font-size: 47px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  /* 1. Define the gradient as a background image */
+  background-image: linear-gradient(
+    63deg,
+    var(--primary-color) 20%,
+    var(--secondary-color) 70%,
+    var(--primary-color),
+    var(--secondary-color)
+  ); /* Example: Red to Yellow to Blue */
+
+  /* 2. Clip the background to the text shape */
+  /* -webkit-background-clip: text; */
+  background-clip: text;
+  /* 3. Make the text fill transparent to show the background */
+  -webkit-text-fill-color: transparent;
+  /* text-fill-color: transparent; */
+}
+
+.brand-track {
+  display: flex;
+  width: max-content;
+  animation: scroll_2 9s linear infinite;
+}
+
+.brand-slider:hover .brand-track {
+  animation-play-state: paused;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+}
+
+.brand-group img {
+  height: 150px;
+  margin: 0 35px;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.brand-group img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%) brightness(1);
+}
+
+.brand-group div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-top: 10px; */
+  margin: 0 35px;
+
+  color: #ffffff;
+  font-size: 18px;
+}
+
+@keyframes scroll_2 {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.counters {
+  text-align: center;
+  position: relative;
+}
+
+.counters > .row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.counters .counter span {
+  color: var(--primary-color);
+}
+.counters .counter p {
+  color: var(--secondary-color);
+}
+
+.counter-value {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  /* color: var(--primary-color);  */
+  /* 1. Define the gradient as a background image */
+  background-image: linear-gradient(
+    352deg,
+    var(--primary-color) 20%,
+    var(--secondary-color) 70%,
+    var(--primary-color),
+    var(--secondary-color)
+  ); /* Example: Red to Yellow to Blue */
+
+  /* 2. Clip the background to the text shape */
+  /* -webkit-background-clip: text; */
+  background-clip: text;
+  /* 3. Make the text fill transparent to show the background */
+  -webkit-text-fill-color: transparent;
+  /* text-fill-color: transparent; */
+}
+
+/* ----------------------------------------------------------- */
+/* Services Section */
+
+.service-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.service-title {
+  text-align: center;
+  font-size: 47px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  /* 1. Define the gradient as a background image */
+  background-image: linear-gradient(
+    352deg,
+    var(--primary-color) 20%,
+    var(--secondary-color) 70%,
+    var(--primary-color),
+    var(--secondary-color)
+  ); /* Example: Red to Yellow to Blue */
+
+  /* 2. Clip the background to the text shape */
+  /* -webkit-background-clip: text; */
+  background-clip: text;
+  /* 3. Make the text fill transparent to show the background */
+  -webkit-text-fill-color: transparent;
+  /* text-fill-color: transparent; */
+}
+
+.service-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+  height: 25rem;
+}
+/* .service-slider:hover .service-track,
+.service-track:hover {
+  animation-play-state: paused;
+} */
+.service-group {
+  display: flex;
+  /* flex-shrink: 0; */
+  align-items: center;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 310px;
+  height: 330px;
+  perspective: 1000px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 35px;
+  width: 18rem;
+  height: 20rem;
+  border-radius: 2rem;
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  /* border-bottom: var(--secondary-color) solid 6px;
+  border-left: var(--secondary-color) solid 6px; */
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-bottom: var(--secondary-color) solid 6px;
+  border-left: var(--secondary-color) solid 6px;
+  border-radius: 1rem;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid #c9aa89;
+  border-radius: 0.5rem;
+}
+
+.flip-card-front {
+  background-image: linear-gradient(
+    352deg,
+    var(--primary-color) 20%,
+    var(--secondary-color) 70%,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+
+  color: #c9aa89;
+}
+.flip-card-front img {
+  height: 100%;
+  border-radius: 1rem;
+}
+.flip-card-front .card-title {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.flip-card-back {
+  background-image: linear-gradient(
+    136deg,
+    var(--primary-color) 20%,
+    var(--secondary-color) 99%,
+    var(--primary-color)
+  );
+
+  transform: rotateY(180deg);
+  /* animation-play-state: paused !important; */
+}
+/* This is the magic part */
+/* Pause animation only when hovering a card */
+
+.flip-card:hover {
+  /* animation-play-state: paused !important; */
+}
+
+/* Make sure the track itself doesn't interfere */
+.service-track:hover {
+  animation-play-state: running; /* keep running when hovering empty space */
+}
+
+.flip-card-back .card-text {
+  color: #ffffff;
+  padding: 1.2rem;
+  font-size: 20px;
+}
+
+.flip-card-back .service_a {
+  color: var(--primary-color);
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 35px;
+  width: 18rem;
+  height: 20rem;
+  border-radius: 2rem;
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-bottom: var(--secondary-color) solid 6px;
+  border-left: var(--secondary-color) solid 6px;
+} */
+
+/* This is the magic: pause only when a CARD is hovered */
+/* .card:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.2);
+  filter: grayscale(0%) brightness(1);
+
+  animation-play-state: paused !important;
+}
+
+.card .card-img-top {
+  width: 3rem;
+}
+.card .card-body {
+  height: 10rem;
+  padding: 0 1rem;
+}
+
+.card .card-body .card-title {
+  font-size: 26px;
+}
+.card:hover .card-title {
+  color: var(--secondary-color);
+}
+
+.card .card-body .card-text {
+  font-size: 15px;
+}
+
+.card:hover .card-text {
+  color: #ffffff;
+}
+
+.card .card-body .service_a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card .card-body .service_a .fa-arrow-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-30%);
+  right: -25%;
+} */
+
+/* Main infinite scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* ----------------------------------------------------------- */
+/* Why Us Section */
+
+.why_Us .why_Us_header {
+  font-size: 7vw;
+  color: var(--primary-color);
+  border-right: 5px solid var(--primary-color);
+  width: 35%;
+  white-space: nowrap;
+  overflow: hidden;
+  /* animation: typing 2s steps(18), cursor 0.4s step-end infinite alternate; */
+
+  /* Infinite loop + blinking cursor */
+  animation: typing 5s steps(22) infinite,
+    /* Change 22 to your exact character count */ cursor 0.8s step-end infinite;
+}
+.why_Us .why_Us_header span {
+  color: var(--secondary-color);
+}
+
+/* Blinking cursor */
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Typing + erase + re-type */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 35%;
+  } /* fully typed */
+  90% {
+    width: 35%;
+  } /* stay fully typed for a moment */
+  100% {
+    width: 0;
+  } /* erase again → loop */
+}
+
+/* If you want it to pause a bit when fully typed (feels more natural) */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 35%;
+  } /* type in */
+  60% {
+    width: 35%;
+  } /* stay fully visible */
+  100% {
+    width: 0;
+  } /* erase */
+}
+
+@keyframes who_typing {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 90%;
+  } /* type in */
+  60% {
+    width: 90%;
+  } /* stay fully visible */
+  100% {
+    width: 0;
+  } /* erase */
+}
+
+@keyframes contact_typing {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 115%;
+  } /* type in */
+  60% {
+    width: 115%;
+  } /* stay fully visible */
+  100% {
+    width: 0;
+  } /* erase */
+}
+
+/* @keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+} */
+
+.why_Us section h1 {
+  /* 1. Define the gradient as a background image */
+  background-image: linear-gradient(
+    357deg,
+    var(--primary-color) 20%,
+    var(--secondary-color) 70%,
+    var(--primary-color),
+    var(--secondary-color)
+  ); /* Example: Red to Yellow to Blue */
+
+  /* 2. Clip the background to the text shape */
+  /* -webkit-background-clip: text; */
+  background-clip: text;
+  /* 3. Make the text fill transparent to show the background */
+  -webkit-text-fill-color: transparent;
+  /* text-fill-color: transparent; */
+}
+
+.why_Us .accordion-header .accordion-button {
+  font-size: 25px;
+}
+
+.why_Us .accordion-header .accordion-button span {
+  color: var(--primary-color);
+}
+
+.accordion .accordion-button {
+  color: #ffffff !important;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.accordion-item {
+  border: 0px solid;
+  /* transition: all 0.3s ease; */
+}
+
+.accordion-item .accordion-header:hover {
+  width: fit-content;
+}
+
+.accordion-item .accordion-button {
+  color: var(--secondary-color);
+}
+
+.accordion .accordion-button::after {
+  background-image: none;
+}
+
+.accordion-item .accordion-button {
+  color: var(--primary-color) !important;
+}
+
+.accordion-item:hover .accordion-button {
+  color: var(--secondary-color) !important;
+  border-radius: 1rem;
+  width: fit-content;
+}
+
+/* Contact Us Section */
+.contact_us .contact_content {
+  margin-top: 5rem;
+}
+
+.contact_us .contact_header {
+  font-size: 76px;
+  width: 35%;
+  border-right: 5px solid var(--primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  /* animation: typing 2s steps(18), cursor 0.4s step-end infinite alternate; */
+
+  /* Infinite loop + blinking cursor */
+  animation: contact_typing 10s steps(22) infinite,
+    /* Change 22 to your exact character count */ cursor 0.8s step-end infinite;
+}
+
+.contact_us form label {
+  color: var(--secondary-color);
+}
+.contact_us form input {
+  background: transparent;
+  color: var(--primary-color);
+}
+.contact_us form input:focus {
+  background: transparent;
+  box-shadow: none;
+  color: var(--primary-color);
+}
+.contact_us form textarea {
+  background: transparent;
+  color: var(--primary-color);
+}
+.contact_us form textarea:focus {
+  background: transparent;
+  box-shadow: none;
+  color: var(--primary-color);
+}
+.contact_us form .btn {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.contact_us form .btn:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.footer .container img {
+  max-width: 15vw;
+  height: auto;
+}
+
+.footer .title {
+  color: var(--secondary-color);
+  font-size: 28px;
+}
+
+.footer p {
+  color: var(--secondary-color);
+  padding: 36px;
+  font-size: 16px;
+}
+
+.footer .nav-link {
+  color: var(--secondary-color);
+}
+
+.footer .nav-link:focus,
+.footer .nav-link:hover {
+  color: var(--background-color);
+}
