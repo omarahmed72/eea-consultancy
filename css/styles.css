@@ -993,9 +993,14 @@ p {
   font-size: 28px;
 }
 
-.footer p {
+
+.footer .footer_p{
   color: var(--secondary-color);
-  padding: 36px;
+  /* padding-left: 5px; */
+}
+.footer p {
+  color: #ffffff;
+  /* padding: 36px; */
   font-size: 16px;
 }
 
