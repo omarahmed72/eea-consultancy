@@ -51,7 +51,7 @@ h1 {
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
-  -webkit-background-clip: text; 
+  -webkit-background-clip: text;
   background-clip: text;
   /* 3. Make the text fill transparent to show the background */
   -webkit-text-fill-color: transparent;
@@ -65,7 +65,8 @@ h6 {
   color: var(--primary-color);
 }
 p {
-  font-size: 1.708984375vw;
+  /* font-size: 1.708984375vw; */
+  font-size: 1rem;
   color: var(--primary-color); /* Bootstrap secondary gray */
 }
 
@@ -285,10 +286,19 @@ p {
   right: -3rem;
   z-index: 2;
 } */
+.who_we_are .logo_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .who_we_are .logo_image img {
   border-radius: 1rem;
   width: 35vw;
 }
+
+@media screen and(max-width:768px) {
+}
+
 .team-slider {
   width: 100%;
   overflow: hidden;
@@ -886,10 +896,11 @@ p {
   /* 3. Make the text fill transparent to show the background */
   -webkit-text-fill-color: transparent;
   /* text-fill-color: transparent; */
+  font-size: 40px;
 }
 
 .why_Us .accordion-header .accordion-button {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .why_Us .accordion-header .accordion-button span {
@@ -1002,4 +1013,3 @@ p {
 .footer .nav-link:hover {
   color: var(--background-color);
 }
-
