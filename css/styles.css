@@ -565,7 +565,7 @@ p {
 
 .service-track {
   display: flex;
-  animation: scroll 30s linear infinite;
+  animation: scroll 25s linear infinite;
   width: max-content;
   height: 25rem;
 }
@@ -853,10 +853,10 @@ p {
     width: 0;
   }
   40% {
-    width: 115%;
+    width: 127%;
   } /* type in */
   60% {
-    width: 115%;
+    width: 127%;
   } /* stay fully visible */
   100% {
     width: 0;
@@ -940,16 +940,17 @@ p {
 }
 
 .contact_us .contact_header {
-  font-size: 76px;
-  width: 35%;
+  /* font-size: 76px; */
+  font-size: 7vw;
+  /* width: 35%;
   border-right: 5px solid var(--primary-color);
   white-space: nowrap;
-  overflow: hidden;
+  overflow: hidden; */
   /* animation: typing 2s steps(18), cursor 0.4s step-end infinite alternate; */
 
   /* Infinite loop + blinking cursor */
-  animation: contact_typing 10s steps(22) infinite,
-    /* Change 22 to your exact character count */ cursor 0.8s step-end infinite;
+  /* animation: contact_typing 10s steps(22) infinite,
+    cursor 0.8s step-end infinite; */
 }
 
 .contact_us form label {
@@ -993,8 +994,7 @@ p {
   font-size: 28px;
 }
 
-
-.footer .footer_p{
+.footer .footer_p {
   color: var(--secondary-color);
   /* padding-left: 5px; */
 }
