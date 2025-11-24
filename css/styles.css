@@ -51,7 +51,7 @@ h1 {
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
-  /* -webkit-background-clip: text; */
+  -webkit-background-clip: text; 
   background-clip: text;
   /* 3. Make the text fill transparent to show the background */
   -webkit-text-fill-color: transparent;
@@ -1002,3 +1002,4 @@ p {
 .footer .nav-link:hover {
   color: var(--background-color);
 }
+
