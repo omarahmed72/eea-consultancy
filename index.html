@@ -1145,7 +1145,9 @@
                   <ul class="nav flex-column mb-0">
                     <li class="nav-item mb-2">
                       <h3 class="title mb-3 text-start">Tanta Branch</h3>
-                      <p class="text-start">Tanta - El Geish Street - Zahana Tower - 6th Floor</p>
+                      <p class="text-start">
+                        Tanta - El Geish Street - Zahana Tower - 6th Floor
+                      </p>
                     </li>
                   </ul>
                 </div>
@@ -1251,82 +1253,6 @@
           track.style.animationPlayState = "paused";
         }
       });
-    </script>
-    <script>
-      // Configuration
-      const COUNTER_DURATION = 2000; // ms (2 seconds)
-      const FRAME_RATE = 60; // fps
-
-      const counters = document.querySelectorAll(".counter-value");
-
-      // Function to animate a single counter
-      function animateCounter(element, target) {
-        const start = 0;
-        const end = parseInt(target);
-        const duration = COUNTER_DURATION;
-        let startTime = null;
-
-        function updateCounter(currentTime) {
-          if (startTime === null) startTime = currentTime;
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-
-          // Easing function (easeOutQuart)
-          const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-          const currentNumber = Math.floor(
-            easeOutQuart * (end - start) + start
-          );
-
-          element.textContent =
-            currentNumber + (element.querySelector("span") ? "+" : "");
-
-          if (progress < 1) {
-            requestAnimationFrame(updateCounter);
-          } else {
-            element.textContent = end + "+";
-          }
-        }
-
-        // Reset to 0 first
-        element.textContent = "0+";
-        requestAnimationFrame(updateCounter);
-      }
-
-      // Intersection Observer to trigger when section is visible
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              // When section becomes visible → start all counters
-              counters.forEach((counter) => {
-                const target = counter.getAttribute("data-target");
-                animateCounter(counter, target);
-              });
-            }
-          });
-        },
-        {
-          threshold: 0.5, // Trigger when 50% of the section is visible
-          rootMargin: "0px 0px -100px 0px", // Optional: trigger a bit earlier
-        }
-      );
-
-      // Observe the entire counters container
-      const countersSection = document.querySelector(".counters");
-      if (countersSection) {
-        observer.observe(countersSection);
-      }
-
-      // Optional: Also run once on load if already visible
-      if (
-        countersSection &&
-        countersSection.getBoundingClientRect().top < window.innerHeight
-      ) {
-        counters.forEach((counter) => {
-          const target = counter.getAttribute("data-target");
-          animateCounter(counter, target);
-        });
-      }
     </script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/all.min.js"></script>
