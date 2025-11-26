@@ -12,9 +12,15 @@ html {
 :root {
   --primary-color: #003b40;
   --secondary-color: #c9aa89;
-  --background-color: #dad4c4;
+  --third-color: #dad4c4;
   --text-color: #f7f2ef;
   --accent-color: #040f0f;
+  --white-color: #ffffff;
+  --gradient_1-color: var(--primary-color);
+  --gradient_2-color: var(--secondary-color);
+  --service_box-color: var(--white-color);
+  --footer-color: var(--primary-color);
+  /* transition: all 0.3s; */
 }
 
 /* #c6ad6871 */
@@ -25,6 +31,16 @@ html {
 @font-face {
   font-family: "headerFont";
   src: url("../eec_fonts/ARBFONTS-DINNEXTLTARABIC-LIGHT-2-2.TTF");
+}
+
+.dark-theme {
+  --primary-color: #c9aa89;
+  --secondary-color: #003b40;
+  --gradient_1-color: var(--primary-color);
+  --gradient_2-color: var(--white-color);
+  --service_box-color: var(--accent-color);
+  --footer-color: var(--accent-color);
+  /* transition: all 0.3s; */
 }
 
 body {
@@ -44,10 +60,10 @@ h1 {
   /* 1. Define the gradient as a background image */
   background-image: linear-gradient(
     352deg,
-    var(--primary-color) 20%,
-    var(--secondary-color) 70%,
-    var(--primary-color),
-    var(--secondary-color)
+    var(--gradient_1-color) 20%,
+    var(--gradient_2-color) 70%,
+    var(--gradient_1-color),
+    var(--gradient_2-color)
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
@@ -135,9 +151,75 @@ p {
 /* .navbar .container {
   gap: 15rem;
 } */
+
+/* From Uiverse.io by Madflows */
+.toggle-switch {
+  position: relative;
+  top: -4px;
+  left: 90px;
+  width: 100px;
+  height: 20px;
+  --light: #d8dbe0;
+  --dark: #28292c;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+}
+
+.switch-label {
+  position: absolute;
+  width: 50%;
+  height: 30px;
+  background-color: var(--dark);
+  border-radius: 25px;
+  cursor: pointer;
+  border: 3px solid var(--dark);
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider {
+  background-color: var(--light);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+  box-shadow: inset 12px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.checkbox:checked ~ .slider::before {
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(15px);
+  background-color: var(--dark);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 .nav-link {
   color: var(--primary-color);
-  font-size: 16px;
+  font-size: 13px;
   transition: all 0.3s ease;
 }
 
@@ -159,11 +241,8 @@ p {
 
 @media (min-width: 992px) {
   .navbar .container {
-    gap: 15rem;
+    gap: 8rem;
   }
-  /* .navbar ul{
-    gap: 9px;
-  } */
 }
 /* End Navbar */
 
@@ -181,10 +260,10 @@ p {
   /* 1. Define the gradient as a background image */
   background-image: linear-gradient(
     0deg,
-    var(--primary-color) 20%,
-    var(--secondary-color) 70%,
-    var(--primary-color),
-    var(--secondary-color)
+    var(--gradient_1-color) 20%,
+    var(--gradient_2-color) 70%,
+    var(--gradient_1-color),
+    var(--gradient_2-color)
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
@@ -325,10 +404,10 @@ p {
   /* 1. Define the gradient as a background image */
   background-image: linear-gradient(
     352deg,
-    var(--primary-color) 20%,
-    var(--secondary-color) 70%,
-    var(--primary-color),
-    var(--secondary-color)
+    var(--gradient_1-color) 20%,
+    var(--gradient_2-color) 70%,
+    var(--gradient_1-color),
+    var(--gradient_2-color)
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
@@ -374,12 +453,12 @@ p {
   /* margin-top: 10px; */
   margin: 0 35px;
 
-  color: #ffffff;
+  color: var(--white-color);
   font-size: 18px;
 }
 
 .team-group div p {
-  color: var(--secondary-color);
+  color: #c9aa89;
 }
 
 @keyframes scroll_1 {
@@ -420,10 +499,10 @@ p {
   /* 1. Define the gradient as a background image */
   background-image: linear-gradient(
     63deg,
-    var(--primary-color) 20%,
-    var(--secondary-color) 70%,
-    var(--primary-color),
-    var(--secondary-color)
+    var(--gradient_1-color) 20%,
+    var(--gradient_2-color) 70%,
+    var(--gradient_1-color),
+    var(--gradient_2-color)
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
@@ -467,7 +546,7 @@ p {
   /* margin-top: 10px; */
   margin: 0 35px;
 
-  color: #ffffff;
+  color: var(--white-color);
   font-size: 18px;
 }
 
@@ -494,7 +573,7 @@ p {
   color: var(--primary-color);
 }
 .counters .counter p {
-  color: var(--secondary-color);
+  color: #c9aa89;
 }
 
 .counter-value {
@@ -505,10 +584,10 @@ p {
   /* 1. Define the gradient as a background image */
   background-image: linear-gradient(
     352deg,
-    var(--primary-color) 20%,
-    var(--secondary-color) 70%,
-    var(--primary-color),
-    var(--secondary-color)
+    var(--gradient_1-color) 20%,
+    var(--gradient_2-color) 70%,
+    var(--gradient_1-color),
+    var(--gradient_2-color)
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
@@ -549,10 +628,10 @@ p {
   /* 1. Define the gradient as a background image */
   background-image: linear-gradient(
     352deg,
-    var(--primary-color) 20%,
-    var(--secondary-color) 70%,
-    var(--primary-color),
-    var(--secondary-color)
+    var(--gradient_1-color) 20%,
+    var(--gradient_2-color) 70%,
+    var(--gradient_1-color),
+    var(--gradient_2-color)
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
@@ -591,7 +670,7 @@ p {
   width: 18rem;
   height: 20rem;
   border-radius: 2rem;
-  color: #ffffff;
+  color: var(--white-color);
   font-size: 18px;
   border-radius: 1rem;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -641,10 +720,10 @@ p {
 .flip-card-front {
   background-image: linear-gradient(
     352deg,
-    var(--primary-color) 20%,
-    var(--secondary-color) 70%,
-    var(--primary-color),
-    var(--secondary-color)
+    var(--gradient_1-color) 20%,
+    var(--gradient_2-color) 70%,
+    var(--gradient_1-color),
+    var(--gradient_2-color)
   );
 
   color: #c9aa89;
@@ -658,17 +737,17 @@ p {
   top: 15%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--white-color);
 }
 
 .flip-card-back {
   background-image: linear-gradient(
     136deg,
-    var(--primary-color) 20%,
-    var(--secondary-color) 99%,
-    var(--primary-color)
+    var(--gradient_1-color) 20%,
+    var(--gradient_2-color) 99%,
+    var(--gradient_1-color)
   );
 
   transform: rotateY(180deg);
@@ -687,7 +766,7 @@ p {
 }
 
 .flip-card-back .card-text {
-  color: #ffffff;
+  color: var(--white-color);
   padding: 1.2rem;
   font-size: 20px;
 }
@@ -878,10 +957,10 @@ p {
   /* 1. Define the gradient as a background image */
   background-image: linear-gradient(
     357deg,
-    var(--primary-color) 20%,
-    var(--secondary-color) 70%,
-    var(--primary-color),
-    var(--secondary-color)
+    var(--gradient_1-color) 20%,
+    var(--gradient_2-color) 70%,
+    var(--gradient_1-color),
+    var(--gradient_2-color)
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
@@ -901,7 +980,7 @@ p {
 }
 
 .accordion .accordion-button {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
   background-color: transparent;
   box-shadow: none;
 }
@@ -933,6 +1012,42 @@ p {
   width: fit-content;
 }
 
+/*  */
+
+.blog-card {
+  background-color: transparent;
+  width: 310px;
+  height: 330px;
+  perspective: 1000px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 35px;
+  width: 18rem;
+  height: 20rem;
+  border-radius: 2rem;
+  color: var(--white-color);
+  font-size: 18px;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  /* border-bottom: var(--secondary-color) solid 6px;
+  border-left: var(--secondary-color) solid 6px; */
+}
+
+.flip-card-content {
+  background-image: linear-gradient(
+    136deg,
+    var(--gradient_1-color) 20%,
+    var(--gradient_2-color) 99%,
+    var(--gradient_1-color)
+  );
+
+  transform: rotateY(180deg);
+  /* animation-play-state: paused !important; */
+}
+
 /* Contact Us Section */
 .contact_us .contact_content {
   margin-top: 5rem;
@@ -953,7 +1068,7 @@ p {
 }
 
 .contact_us form label {
-  color: var(--secondary-color);
+  color: #c9aa89;
 }
 .contact_us form input {
   background: transparent;
@@ -989,37 +1104,46 @@ p {
 }
 
 .footer .title {
-  color: var(--secondary-color);
+  color: #c9aa89;
   font-size: 28px;
 }
 
 .footer .footer_p {
-  color: var(--secondary-color);
+  color: #c9aa89;
   /* padding-left: 5px; */
 }
 .footer p {
-  color: #ffffff;
+  color: var(--white-color);
   /* padding: 36px; */
   font-size: 16px;
 }
 
 .footer .nav-link {
-  color: var(--secondary-color);
+  color: #c9aa89;
 }
 
 .footer .nav-link:focus,
 .footer .nav-link:hover {
-  color: var(--background-color);
+  background-color: transparent;
+  color: var(--third-color);
+  width: max-content;
 }
 
 /* Services Page */
 
 .service_box {
   margin-top: 5em;
-  background-color: #ffffff;
+  background-color: var(--service_box-color);
   border-radius: 1rem;
   border: var(--secondary-color) solid 6px;
 }
 .service_box .img-fluid {
   border-radius: 1rem;
+}
+
+/* Blogs Page */
+
+.blog_card {
+  height: 15rem;
+  background-color: var(--secondary-color);
 }
