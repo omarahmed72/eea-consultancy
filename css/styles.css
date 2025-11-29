@@ -18,6 +18,8 @@ html {
   --white-color: #ffffff;
   --gradient_1-color: var(--primary-color);
   --gradient_2-color: var(--secondary-color);
+  --card_gradient_1-color: #003b40;
+  --card_gradient_2-color: #c9aa89;
   --service_box-color: var(--white-color);
   --footer-color: var(--primary-color);
   /* transition: all 0.3s; */
@@ -38,6 +40,8 @@ html {
   --secondary-color: #003b40;
   --gradient_1-color: var(--primary-color);
   --gradient_2-color: var(--white-color);
+  --card_gradient_1-color: #c9aa89;
+  --card_gradient_2-color: #003b40;
   --service_box-color: var(--accent-color);
   --footer-color: var(--accent-color);
   /* transition: all 0.3s; */
@@ -284,6 +288,7 @@ p {
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
+
 /* .covar .image {
   position: relative;
   background-image: url(../imgs/logo_image.png);
@@ -341,7 +346,7 @@ p {
   }
 } */
 
-.who_we_are h1 {
+.who_we_are .gradient-text {
   font-size: 7vw;
   border-right: 5px solid var(--primary-color);
   width: 35%;
@@ -352,6 +357,19 @@ p {
   /* Infinite loop + blinking cursor */
   animation: who_typing 10s steps(22) infinite,
     /* Change 22 to your exact character count */ cursor 0.8s step-end infinite;
+}
+
+.who_we_are p {
+  padding: 2rem;
+}
+@media (max-width: 767px) {
+  .who_we_are .gradient-text {
+    font-size: 50px;
+    animation: who_typing_media 10s steps(22) infinite;
+  }
+  .who_we_are p {
+    padding: 0;
+  }
 }
 
 /* .who_we_are h1 span {
@@ -371,10 +389,16 @@ p {
 }
 .who_we_are .logo_image img {
   border-radius: 1rem;
-  width: 35vw;
+  /*  */
+  width: 340px;
 }
 
-@media screen and(max-width:768px) {
+@media (min-width: 1024px) {
+  .who_we_are .logo_image img {
+    width: 500px;
+  }
+}
+@media (max-width: 768px) {
 }
 
 .team-slider {
@@ -420,7 +444,7 @@ p {
 .team-track {
   display: flex;
   width: max-content;
-  animation: scroll_1 9s linear infinite;
+  animation: scroll_1 18s linear infinite;
 }
 
 .team-slider:hover .team-track {
@@ -456,9 +480,23 @@ p {
   color: var(--white-color);
   font-size: 18px;
 }
+.team-group div h1 {
+  font-size: 24px;
+}
 
 .team-group div p {
   color: #c9aa89;
+}
+@media (max-width: 767px) {
+  .team-group img {
+    height: 165px;
+  }
+  .team-group div h1 {
+    font-size: 15px;
+  }
+  .team-group div p {
+    font-size: 12px;
+  }
 }
 
 @keyframes scroll_1 {
@@ -515,7 +553,7 @@ p {
 .brand-track {
   display: flex;
   width: max-content;
-  animation: scroll_2 9s linear infinite;
+  animation: scroll_2 18s linear infinite;
 }
 
 .brand-slider:hover .brand-track {
@@ -600,257 +638,109 @@ p {
 /* ----------------------------------------------------------- */
 /* Services Section */
 
-.service-slider {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
+.swiper {
+  width: 240px;
+  height: 320px;
 }
 
-.service-title {
-  text-align: center;
-  font-size: 47px;
-  font-weight: 700;
-  margin-bottom: 25px;
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+}
+
+.swiper-slide img {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+.swiper-slide .content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: 0.6s;
+}
+.swiper-slide .content:hover {
+  opacity: 0;
+}
+.swiper-slide .content h1 {
+  font-size: 30px;
+  padding: 0px 20px 20px 25px;
   /* 1. Define the gradient as a background image */
   background-image: linear-gradient(
     352deg,
-    var(--gradient_1-color) 20%,
-    var(--gradient_2-color) 70%,
-    var(--gradient_1-color),
-    var(--gradient_2-color)
+    #c9aa89 20%,
+    #ffffff 70%,
+    #c9aa89,
+    #ffffff
   ); /* Example: Red to Yellow to Blue */
 
   /* 2. Clip the background to the text shape */
   -webkit-background-clip: text;
   background-clip: text;
   /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent; /* text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent;
+  /* text-fill-color: transparent; */
 }
 
-.service-track {
-  display: flex;
-  animation: scroll 45s linear infinite;
-  width: max-content;
-  height: 25rem;
+.swiper-slide .content > * {
+  transform: translateY(25px);
+  transition: transform 0.6s;
 }
-/* .service-slider:hover .service-track,
-.service-track:hover {
-  animation-play-state: paused;
-} */
-.service-group {
-  display: flex;
-  /* flex-shrink: 0; */
-  align-items: center;
+.swiper-slide .content > *:hover {
+  transform: translateY(px);
 }
 
-.flip-card {
-  background-color: transparent;
-  width: 310px;
-  height: 330px;
-  perspective: 1000px;
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 35px;
-  width: 18rem;
-  height: 20rem;
-  border-radius: 2rem;
-  color: var(--white-color);
-  font-size: 18px;
-  border-radius: 1rem;
-  transition: transform 0.3s ease, filter 0.3s ease;
-
-  /* border-bottom: var(--secondary-color) solid 6px;
-  border-left: var(--secondary-color) solid 6px; */
+.swiper-slide:nth-child(1n) {
+  background-color: rgb(206, 17, 17);
 }
 
-.title {
-  font-size: 1.5em;
-  font-weight: 900;
-  text-align: center;
-  margin: 0;
+.swiper-slide:nth-child(2n) {
+  background-color: rgb(0, 140, 255);
 }
 
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  border-bottom: var(--secondary-color) solid 6px;
-  border-left: var(--secondary-color) solid 6px;
-  border-radius: 1rem;
+.swiper-slide:nth-child(3n) {
+  background-color: rgb(10, 184, 111);
 }
 
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+.swiper-slide:nth-child(4n) {
+  background-color: rgb(211, 122, 7);
 }
 
-.flip-card-front,
-.flip-card-back {
-  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border: 1px solid #c9aa89;
-  border-radius: 0.5rem;
+.swiper-slide:nth-child(5n) {
+  background-color: rgb(118, 163, 12);
 }
 
-.flip-card-front {
-  background-image: linear-gradient(
-    352deg,
-    var(--gradient_1-color) 20%,
-    var(--gradient_2-color) 70%,
-    var(--gradient_1-color),
-    var(--gradient_2-color)
-  );
-
-  color: #c9aa89;
-}
-.flip-card-front img {
-  height: 100%;
-  border-radius: 1rem;
-}
-.flip-card-front .card-title {
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 25px;
-  font-weight: 600;
-  color: var(--white-color);
+.swiper-slide:nth-child(6n) {
+  background-color: rgb(180, 10, 47);
 }
 
-.flip-card-back {
-  background-image: linear-gradient(
-    136deg,
-    var(--gradient_1-color) 20%,
-    var(--gradient_2-color) 99%,
-    var(--gradient_1-color)
-  );
-
-  transform: rotateY(180deg);
-  /* animation-play-state: paused !important; */
-}
-/* This is the magic part */
-/* Pause animation only when hovering a card */
-
-.flip-card:hover {
-  /* animation-play-state: paused !important; */
+.swiper-slide:nth-child(7n) {
+  background-color: rgb(35, 99, 19);
 }
 
-/* Make sure the track itself doesn't interfere */
-.service-track:hover {
-  animation-play-state: running; /* keep running when hovering empty space */
+.swiper-slide:nth-child(8n) {
+  background-color: rgb(0, 68, 255);
 }
 
-.flip-card-back .card-text {
-  color: var(--white-color);
-  padding: 1.2rem;
-  font-size: 20px;
+.swiper-slide:nth-child(9n) {
+  background-color: rgb(218, 12, 218);
 }
 
-.flip-card-back .service_a {
-  color: var(--primary-color);
-  position: absolute;
-  bottom: 0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 35px;
-  width: 18rem;
-  height: 20rem;
-  border-radius: 2rem;
-  color: #ffffff;
-  font-size: 18px;
-  border-radius: 1rem;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  border-bottom: var(--secondary-color) solid 6px;
-  border-left: var(--secondary-color) solid 6px;
-} */
-
-/* This is the magic: pause only when a CARD is hovered */
-/* .card:hover {
-  background-color: var(--primary-color);
-  transform: scale(1.2);
-  filter: grayscale(0%) brightness(1);
-
-  animation-play-state: paused !important;
-}
-
-.card .card-img-top {
-  width: 3rem;
-}
-.card .card-body {
-  height: 10rem;
-  padding: 0 1rem;
-}
-
-.card .card-body .card-title {
-  font-size: 26px;
-}
-.card:hover .card-title {
-  color: var(--secondary-color);
-}
-
-.card .card-body .card-text {
-  font-size: 15px;
-}
-
-.card:hover .card-text {
-  color: #ffffff;
-}
-
-.card .card-body .service_a {
-  text-decoration: none;
-  color: var(--secondary-color);
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.card .card-body .service_a .fa-arrow-right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-30%);
-  right: -25%;
-} */
-
-/* Main infinite scroll */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.swiper-slide:nth-child(10n) {
+  background-color: rgb(54, 94, 77);
 }
 /* ----------------------------------------------------------- */
 /* Why Us Section */
@@ -868,6 +758,14 @@ p {
   animation: typing 5s steps(22) infinite,
     /* Change 22 to your exact character count */ cursor 0.8s step-end infinite;
 }
+
+@media (max-width: 767px) {
+  .why_Us .why_Us_header {
+    font-size: 53px;
+    animation: why_typing_media 10s steps(22) infinite;
+  }
+}
+
 .why_Us .why_Us_header span {
   color: var(--secondary-color);
 }
@@ -920,6 +818,36 @@ p {
   } /* type in */
   60% {
     width: 90%;
+  } /* stay fully visible */
+  100% {
+    width: 0;
+  } /* erase */
+}
+
+@keyframes who_typing_media {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 90%;
+  } /* type in */
+  60% {
+    width: 90%;
+  } /* stay fully visible */
+  100% {
+    width: 0;
+  } /* erase */
+}
+
+@keyframes why_typing_media {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 62%;
+  } /* type in */
+  60% {
+    width: 62%;
   } /* stay fully visible */
   100% {
     width: 0;
@@ -1012,6 +940,29 @@ p {
   width: fit-content;
 }
 
+.why_Us_line {
+  background-image: linear-gradient(
+    357deg,
+    var(--gradient_1-color) 20%,
+    var(--gradient_2-color) 70%,
+    var(--gradient_1-color),
+    var(--gradient_2-color)
+  ); /* Example: Red to Yellow to Blue */
+
+  /* 2. Clip the background to the text shape */
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* 3. Make the text fill transparent to show the background */
+  -webkit-text-fill-color: transparent;
+
+  font-size: 25px;
+}
+
+@media (max-width: 768px) {
+  .why_Us_line {
+    margin-bottom: -2rem;
+  }
+}
 /*  */
 
 .blog-card {
@@ -1054,17 +1005,12 @@ p {
 }
 
 .contact_us .contact_header {
-  /* font-size: 76px; */
   font-size: 7vw;
-  /* width: 35%;
-  border-right: 5px solid var(--primary-color);
-  white-space: nowrap;
-  overflow: hidden; */
-  /* animation: typing 2s steps(18), cursor 0.4s step-end infinite alternate; */
-
-  /* Infinite loop + blinking cursor */
-  /* animation: contact_typing 10s steps(22) infinite,
-    cursor 0.8s step-end infinite; */
+}
+@media (max-width: 767px) {
+  .contact_us .contact_header {
+    font-size: 53px;
+  }
 }
 
 .contact_us form label {
@@ -1124,7 +1070,6 @@ p {
 
 .footer .nav-link:focus,
 .footer .nav-link:hover {
-  background-color: transparent;
   color: var(--third-color);
   width: max-content;
 }
@@ -1139,6 +1084,17 @@ p {
 }
 .service_box .img-fluid {
   border-radius: 1rem;
+}
+.service_box .service_box_text .service_btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.service_box .service_box_text .service_btn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+.service_box .service_box_text {
+  margin-top: 7rem;
 }
 
 /* Blogs Page */
