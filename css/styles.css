@@ -50,7 +50,7 @@ html {
 body {
   font-family: "myFirstFont";
   /* background-color: var(--primary-color); */
-  background-image: url(../imgs/back.png);
+  background-image: url("../imgs/back.png");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -1103,3 +1103,4 @@ p {
   height: 15rem;
   background-color: var(--secondary-color);
 }
+
