@@ -1,3 +1,28 @@
+const spinnerWrapperEl = document.querySelector(".spinner-wrapper");
+
+window.addEventListener("load", () => {
+  // spinnerWrapperEl.style.opacity = "0";
+  setTimeout(() => {
+    spinnerWrapperEl.style.display = "none";
+  }, 2000);
+});
+
+document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    const navbar = link.closest(".navbar");
+    const toggle = navbar.querySelector(".navbar-toggler");
+    const collapse = navbar.querySelector(".navbar-collapse");
+
+    if (toggle && collapse && collapse.classList.contains("show")) {
+      toggle.click(); // This triggers Bootstrap's own collapse and updates aria-expanded
+      // Or manually:
+      // toggle.setAttribute('aria-expanded', 'false');
+      // toggle.classList.add('collapsed');
+      // collapse.classList.remove('show');
+    }
+  });
+});
+
 // main.js - Scroll-Activated Number Counter
 document.addEventListener("DOMContentLoaded", function () {
   const counters = document.querySelectorAll(".counter-value");
@@ -89,26 +114,31 @@ document.addEventListener("DOMContentLoaded", function () {
   runCounters();
 });
 
+// Global variable to track current theme
+var theme = "LIGHT"; // default fallback
+
 function darkmode() {
   var SetTheme = document.body;
   SetTheme.classList.toggle("dark-theme");
   var logo = document.getElementById("logo");
-  // var f_logo = document.getElementById("f_logo");
 
   if (SetTheme.classList.contains("dark-theme")) {
     console.log("Dark Theme Activated");
     theme = "DARK";
-    SetTheme.style.backgroundImage = "url(../imgs/bg.png)";
+    // SetTheme.style.backgroundImage = "url(../imgs/bg.png)";
+      SetTheme.style.backgroundColor = '#000000'
+
     if (logo) logo.src = "imgs/png.png";
-    // if (f_logo) f_logo.src = "imgs/logo-0١.png";
   } else {
     console.log("Light Theme Activated");
     theme = "LIGHT";
-    SetTheme.style.backgroundImage = "url(../imgs/back.png)";
+    // SetTheme.style.backgroundImage = "url(../imgs/back.png)";
+      SetTheme.style.backgroundColor = '#ffffff'
+
     if (logo) logo.src = "imgs/logo-0١.png";
-    // if (f_logo) f_logo.src = "imgs/png.png";
   }
-  // Store the theme in local storage (store plain string)
+
+  // Save user's choice (this overrides system preference)
   try {
     localStorage.setItem("PageTheme", theme);
   } catch (e) {
@@ -116,40 +146,88 @@ function darkmode() {
   }
 }
 
-// Apply saved theme on load (safely after DOM is ready)
+// Apply theme on page load — with system preference support
 document.addEventListener("DOMContentLoaded", function () {
   var SetTheme = document.body;
-  SetTheme.classList.toggle("dark-theme");
   var logo = document.getElementById("logo");
-  // var f_logo = document.getElementById("f_logo");
 
   function applyAssets(theme) {
     if (theme === "DARK") {
-      SetTheme.style.backgroundImage = "url(../imgs/bg.png)";
+      // SetTheme.style.backgroundImage = "url(../imgs/bg.png)";
+      SetTheme.style.backgroundColor = '#000000'
+
       if (logo) logo.src = "imgs/png.png";
-      // if (f_logo) f_logo.src = "imgs/logo-0١.png";
     } else {
-      SetTheme.style.backgroundImage = "url(../imgs/back.png)";
+      // SetTheme.style.backgroundImage = "url(../imgs/back.png)";
+      SetTheme.style.backgroundColor = '#ffffff'
       if (logo) logo.src = "imgs/logo-0١.png";
-      // if (f_logo) f_logo.src = "imgs/png.png";
     }
   }
 
   try {
     var saved = localStorage.getItem("PageTheme");
-    if (!saved) saved = "LIGHT";
-    console.log("Saved Theme is : " + saved);
 
-    if (saved === "DARK") {
-      document.body.classList.add("dark-theme");
-      applyAssets("DARK");
+    if (saved === "DARK" || saved === "LIGHT") {
+      // User has chosen before → respect their choice
+      theme = saved;
+      console.log("Saved Theme is: " + theme);
+
+      if (theme === "DARK") {
+        SetTheme.classList.add("dark-theme");
+      } else {
+        SetTheme.classList.remove("dark-theme");
+      }
+      applyAssets(theme);
     } else {
-      document.body.classList.remove("dark-theme");
-      applyAssets("LIGHT");
+      // First time visit → follow system preference
+      var systemPrefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (systemPrefersDark) {
+        theme = "DARK";
+        SetTheme.classList.add("dark-theme");
+        console.log("System prefers DARK → Applied Dark Theme");
+      } else {
+        theme = "LIGHT";
+        SetTheme.classList.remove("dark-theme");
+        console.log("System prefers LIGHT → Applied Light Theme");
+      }
+      applyAssets(theme);
+
+      // Optional: Save system choice so it doesn't flicker on next load
+      localStorage.setItem("PageTheme", theme);
     }
   } catch (e) {
-    console.warn("Error reading theme from localStorage:", e);
+    console.warn("Error reading/applying theme:", e);
   }
 });
 
-// End Dark Mode Script
+// Optional: Live update if user changes system theme while on page
+if (window.matchMedia) {
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", function (e) {
+      try {
+        var saved = localStorage.getItem("PageTheme");
+        // Only auto-change if user never manually picked a theme
+        if (!saved || (saved !== "DARK" && saved !== "LIGHT")) {
+          if (e.matches) {
+            document.body.classList.add("dark-theme");
+            document.body.style.backgroundImage = "url(../imgs/bg.png)";
+            if (document.getElementById("logo"))
+              document.getElementById("logo").src = "imgs/png.png";
+            console.log("System changed to Dark");
+          } else {
+            document.body.classList.remove("dark-theme");
+            document.body.style.backgroundImage = "url(../imgs/back.png)";
+            if (document.getElementById("logo"))
+              document.getElementById("logo").src = "imgs/logo-0١.png";
+            console.log("System changed to Light");
+          }
+        }
+      } catch (e) {
+        console.warn("Error on system theme change:", e);
+      }
+    });
+}
