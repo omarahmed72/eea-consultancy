@@ -36,22 +36,6 @@
           />
         </a>
 
-        <!-- From Uiverse.io by Madflows -->
-        <div class="toggle-switch">
-          <label class="switch-label">
-            <input
-              type="checkbox"
-              class="checkbox"
-              id="dark"
-              onclick="darkmode()"
-            />
-            <span class="slider"></span>
-          </label>
-        </div>
-        <!-- <div id="dark" onclick="darkmode()">
-          <i class="fa-solid fa-circle-half-stroke"></i>
-        </div> -->
-
         <button
           id="theme-toggle"
           class="navbar-toggler"
@@ -64,6 +48,18 @@
         >
           <i class="fa-solid fa-bars"></i>
         </button>
+        <!-- From Uiverse.io by Madflows -->
+        <div class="toggle-switch">
+          <label class="switch-label">
+            <input
+              type="checkbox"
+              class="checkbox"
+              id="dark"
+              onclick="darkmode()"
+            />
+            <span class="slider"></span>
+          </label>
+        </div>
 
         <div class="collapse navbar-collapse" id="main">
           <ul class="navbar-nav mr-auto" style="gap: 30px">
@@ -104,7 +100,7 @@
       </div>
     </nav>
 
-      <a
+    <a
       href="https://api.whatsapp.com/send?phone=+201000042875&text=Hello"
       class="float"
       target="_blank"
@@ -173,8 +169,10 @@
                 />
                 <div class="invalid-feedback">الرجاء إدخال الاسم!</div>
               </div>
-                <div class="col-sm-6">
-                <label class="form-label fs-base" for="email">البريد الالكتروني</label>
+              <div class="col-sm-6">
+                <label class="form-label fs-base" for="email"
+                  >البريد الالكتروني</label
+                >
                 <input
                   name="email"
                   class="form-control form-control-lg"
@@ -210,7 +208,7 @@
               </div>
               <div class="col-sm-12 pt-2">
                 <input
-                  name="send" 
+                  name="send"
                   class="btn"
                   type="submit"
                   id="contact-submit"
