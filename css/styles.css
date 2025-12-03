@@ -169,7 +169,7 @@ p {
 .toggle-switch {
   position: relative;
   top: 2px;
-  left: 108px;
+  left: 4rem;
   width: 100px;
   height: 20px;
   --light: #d8dbe0;
@@ -232,6 +232,8 @@ p {
 
 #theme-toggle {
   box-shadow: none;
+  position: relative;
+  left: 35vw;
 }
 .nav-link {
   color: var(--primary-color);
@@ -679,6 +681,7 @@ p {
   opacity: 0;
 }
 .swiper-slide .content h1 {
+  color: #c9aa89;
   font-size: 30px;
   padding: 0px 20px 20px 25px;
   /* 1. Define the gradient as a background image */
