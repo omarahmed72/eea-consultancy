@@ -66,23 +66,7 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
-  /* 1. Define the gradient as a background image */
-  background-image: linear-gradient(
-    352deg,
-    var(--gradient_1-color) 20%,
-    var(--gradient_2-color) 70%,
-    var(--gradient_1-color),
-    var(--gradient_2-color)
-  ); /* Example: Red to Yellow to Blue */
-
-  /* 2. Clip the background to the text shape */
-  -webkit-background-clip: text;
-  background-clip: text;
-  /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent;
-  /* text-fill-color: transparent; */
-}
+h1,
 h2,
 h3,
 h4,
@@ -340,22 +324,9 @@ p {
 /* Hero Section */
 
 .hero_section .gradient-text,
-.hero_section .gradient-text span {
+.hero_section .gradient-text > span {
   font-size: 4.5rem;
   /* 1. Define the gradient as a background image */
-  background-image: linear-gradient(
-    0deg,
-    var(--gradient_1-color) 20%,
-    var(--gradient_2-color) 70%,
-    var(--gradient_1-color) 7%,
-    var(--gradient_2-color) 3%
-  ) !important; /* Example: Red to Yellow to Blue */
-
-  /* 2. Clip the background to the text shape */
-  -webkit-background-clip: text;
-  background-clip: text;
-  /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent; /* text-fill-color: transparent; */
 }
 
 .hero_section .hero_btn {
@@ -428,7 +399,7 @@ p {
 } */
 
 .who_we_are .gradient-text {
-  font-size: 7vw;
+  font-size: 4.5rem;
 }
 
 .who_we_are p {
@@ -497,19 +468,6 @@ p {
   font-size: 47px;
   font-weight: 700;
   /* 1. Define the gradient as a background image */
-  background-image: linear-gradient(
-    352deg,
-    var(--gradient_1-color) 20%,
-    var(--gradient_2-color) 70%,
-    var(--gradient_1-color),
-    var(--gradient_2-color)
-  ); /* Example: Red to Yellow to Blue */
-
-  /* 2. Clip the background to the text shape */
-  -webkit-background-clip: text;
-  background-clip: text;
-  /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent; /* text-fill-color: transparent; */
 }
 
 .team-track {
@@ -606,19 +564,6 @@ p {
   font-weight: 700;
   margin-bottom: 25px;
   /* 1. Define the gradient as a background image */
-  background-image: linear-gradient(
-    63deg,
-    var(--gradient_1-color) 20%,
-    var(--gradient_2-color) 70%,
-    var(--gradient_1-color),
-    var(--gradient_2-color)
-  ); /* Example: Red to Yellow to Blue */
-
-  /* 2. Clip the background to the text shape */
-  -webkit-background-clip: text;
-  background-clip: text;
-  /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent; /* text-fill-color: transparent; */
 }
 
 .brand-track {
@@ -691,19 +636,6 @@ p {
   margin-bottom: 0.5em;
   /* color: var(--primary-color);  */
   /* 1. Define the gradient as a background image */
-  background-image: linear-gradient(
-    352deg,
-    var(--gradient_1-color) 20%,
-    var(--gradient_2-color) 70%,
-    var(--gradient_1-color),
-    var(--gradient_2-color)
-  ); /* Example: Red to Yellow to Blue */
-
-  /* 2. Clip the background to the text shape */
-  -webkit-background-clip: text;
-  background-clip: text;
-  /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent; /* text-fill-color: transparent; */
 }
 
 /* ----------------------------------------------------------- */
@@ -750,20 +682,6 @@ p {
   font-size: 30px;
   padding: 0px 20px 20px 25px;
   /* 1. Define the gradient as a background image */
-  background-image: linear-gradient(
-    352deg,
-    #c9aa89 20%,
-    #ffffff 70%,
-    #c9aa89,
-    #ffffff
-  ); /* Example: Red to Yellow to Blue */
-
-  /* 2. Clip the background to the text shape */
-  -webkit-background-clip: text;
-  background-clip: text;
-  /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent;
-  /* text-fill-color: transparent; */
 }
 
 .swiper-slide .content > * {
@@ -778,7 +696,7 @@ p {
 /* Why Us Section */
 
 .why_Us .why_Us_header {
-  font-size: 7vw;
+  font-size: 4.5rem;
   color: var(--primary-color);
 }
 
@@ -904,20 +822,6 @@ p {
 } */
 
 .why_Us section h1 {
-  /* 1. Define the gradient as a background image */
-  background-image: linear-gradient(
-    357deg,
-    var(--gradient_1-color) 20%,
-    var(--gradient_2-color) 70%,
-    var(--gradient_1-color),
-    var(--gradient_2-color)
-  ); /* Example: Red to Yellow to Blue */
-
-  /* 2. Clip the background to the text shape */
-  -webkit-background-clip: text;
-  background-clip: text;
-  /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent;
   font-size: 40px;
 }
 
@@ -972,20 +876,6 @@ p {
 }
 
 .why_Us_line {
-  background-image: linear-gradient(
-    357deg,
-    var(--gradient_1-color) 20%,
-    var(--gradient_2-color) 70%,
-    var(--gradient_1-color),
-    var(--gradient_2-color)
-  ); /* Example: Red to Yellow to Blue */
-
-  /* 2. Clip the background to the text shape */
-  -webkit-background-clip: text;
-  background-clip: text;
-  /* 3. Make the text fill transparent to show the background */
-  -webkit-text-fill-color: transparent;
-
   font-size: 25px;
 }
 
@@ -1019,13 +909,6 @@ p {
 }
 
 .flip-card-content {
-  background-image: linear-gradient(
-    136deg,
-    var(--gradient_1-color) 20%,
-    var(--gradient_2-color) 99%,
-    var(--gradient_1-color)
-  );
-
   transform: rotateY(180deg);
   /* animation-play-state: paused !important; */
 }
@@ -1036,7 +919,7 @@ p {
 }
 
 .contact_us .contact_header {
-  font-size: 7vw;
+  font-size: 4.5rem;
 }
 @media (max-width: 767px) {
   .contact_us .contact_header {
@@ -1076,7 +959,7 @@ p {
 }
 
 .footer .container img {
-  max-width: 15vw;
+  max-width: 15rem;
   height: auto;
 }
 
@@ -1132,6 +1015,9 @@ p {
 
 /* Blogs Page */
 
+.textHeader .gradient-text > span {
+}
+
 .blog_card {
   position: relative;
   height: 15rem;
@@ -1144,4 +1030,3 @@ p {
   color: var(--primary-color);
   text-decoration: none;
 }
-
