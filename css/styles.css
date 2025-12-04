@@ -6,7 +6,8 @@
 }
 
 html {
-  /* scroll-behavior: smooth; */
+  will-change: auto;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -1033,3 +1034,4 @@ p {
   color: var(--primary-color);
   text-decoration: none;
 }
+
