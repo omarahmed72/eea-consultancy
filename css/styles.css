@@ -56,7 +56,7 @@ html {
 body {
   font-family: "myFirstFont";
   /* background-color: var(--primary-color); */
-  background-image: url("../imgs/png.png");
+  background-image: url("../imgs/EEA-back.png");
   /* background:#000000; */
   background-size: cover;
   background-attachment: fixed;
