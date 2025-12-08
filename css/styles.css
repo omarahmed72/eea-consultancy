@@ -56,7 +56,7 @@ html {
 body {
   font-family: "myFirstFont";
   /* background-color: var(--primary-color); */
-  background-image: url("../imgs/back.png");
+  background-image: url("../imgs/png.png");
   /* background:#000000; */
   background-size: cover;
   background-attachment: fixed;
@@ -77,7 +77,7 @@ h6 {
 }
 p {
   /* font-size: 1.708984375vw; */
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: var(--primary-color); /* Bootstrap secondary gray */
 }
 
@@ -236,6 +236,11 @@ p {
   position: relative;
   left: 35vw;
 }
+.navbar .logo {
+  max-width: 70px;
+  width: 100%;
+}
+
 .nav-link {
   color: var(--primary-color);
   font-size: 13px;
@@ -252,10 +257,27 @@ p {
 }
 
 .navbar-toggler {
+  position: relative;
+  left: 30vw;
+  color: var(--primary-color);
+}
+.navbar-toggler:focus {
   border: none;
   outline: none;
   box-shadow: none;
-  color: var(--primary-color);
+}
+.nav_toggle{
+  background-color: #000000;
+}
+img#logo_2 {
+  position: relative;
+  right: 28vw;
+}
+
+.close_icon {
+  position: absolute;
+  top: 10vh;
+  right: 35vw;
 }
 
 @media (min-width: 992px) {
@@ -330,6 +352,14 @@ p {
 .hero_section .gradient-text > span {
   font-size: 4.5rem;
   /* 1. Define the gradient as a background image */
+}
+
+@media (max-width: 426px) {
+  .hero_section .gradient-text,
+  .hero_section .gradient-text > span {
+    font-size: 1.5rem;
+    /* 1. Define the gradient as a background image */
+  }
 }
 
 .hero_section .hero_btn {
@@ -572,11 +602,8 @@ p {
 .brand-track {
   display: flex;
   width: max-content;
+  height: 11rem;
   animation: scroll_2 18s linear infinite;
-}
-
-.brand-slider:hover .brand-track {
-  animation-play-state: paused;
 }
 
 .brand-group {
@@ -591,10 +618,10 @@ p {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.brand-group img:hover {
+/* .brand-group img:hover {
   transform: scale(1.1);
   filter: grayscale(0%) brightness(1);
-}
+} */
 
 .brand-group div {
   display: flex;
@@ -671,18 +698,17 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
   transition: 0.6s;
 }
 .swiper-slide .content:hover {
-  opacity: 0;
+  transform: scale(1.1);
 }
 .swiper-slide .content h1 {
-  color: #c9aa89;
+  color: #ffffff;
   font-size: 30px;
   padding: 0px 20px 20px 25px;
   /* 1. Define the gradient as a background image */
@@ -967,6 +993,34 @@ p {
   height: auto;
 }
 
+@media (min-width: 320px) {
+  .footer .container img {
+    margin: 0px !important;
+  }
+}
+@media (min-width: 375px) {
+  .footer .container img {
+    margin: 0 30px !important;
+  }
+}
+@media (min-width: 425px) {
+  .footer .container img {
+    margin: 0 60px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer .container img {
+    margin: 0px !important;
+  }
+}
+
+/* @media (max-width: 425px) {
+  .footer .container img {
+    margin: 0 !important;
+  }
+} */
+
 .footer .title {
   color: #c9aa89;
   font-size: 28px;
@@ -1014,7 +1068,7 @@ p {
   color: var(--secondary-color);
 }
 .service_box .service_box_text {
-  margin-top: 7rem;
+  margin-top: 2rem;
 }
 
 /* Blogs Page */
@@ -1034,4 +1088,3 @@ p {
   color: var(--primary-color);
   text-decoration: none;
 }
-
