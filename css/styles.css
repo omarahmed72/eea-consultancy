@@ -59,6 +59,7 @@ body {
   background-image: url("../imgs/EEA-back.png");
   /* background:#000000; */
   background-size: cover;
+  background-blend-mode: linear-burn;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
