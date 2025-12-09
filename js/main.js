@@ -11,7 +11,7 @@ document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
   link.addEventListener("click", () => {
     const navbar = link.closest(".navbar");
     const toggle = navbar.querySelector(".navbar-toggler");
-    const collapse = navbar.querySelector(".navbar-collapse");
+    const collapse = navbar.querySelector(".offcanvas");
 
     if (toggle && collapse && collapse.classList.contains("show")) {
       toggle.click(); // This triggers Bootstrap's own collapse and updates aria-expanded
