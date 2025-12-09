@@ -56,7 +56,7 @@ html {
 body {
   font-family: "myFirstFont";
   /* background-color: var(--primary-color); */
-  /* background-image: url("../imgs/EEA-back.png"); */
+  background-image: url("../imgs/EEA-back.png");
   /* background:#000000; */
   background-size: cover;
   background-blend-mode: linear-burn;
@@ -267,7 +267,7 @@ p {
   outline: none;
   box-shadow: none;
 }
-.nav_toggle{
+.nav_toggle {
   background-color: #000000;
 }
 img#logo_2 {
