@@ -25,29 +25,76 @@
       </div>
     </div>
 
-    <nav dir="ltr" class="navbar navbar-expand-lg sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img
-            id="logo"
-            class="logo"
-            src="imgs/logo-0١.png"
-            style="height: 50px"
-          />
-        </a>
-
+    <nav dir="ltr" class="navbar navbar-expand-lg py-4 py-lg-0 sticky-top">
+      <div class="container px-4">
+        <img id="logo" class="logo" src="imgs/logo-0١.png" alt="logo" />
         <button
-          id="theme-toggle"
-          class="navbar-toggler"
+          class="navbar-toggler border-0"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#main"
-          aria-controls="main"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#top-navbar"
+          aria-controls="top-navbar"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <i class="fa-solid fa-bars"></i>
         </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="top-navbar"
+          aria-labelledby="top-navbarLabel"
+        >
+          <!-- Navigation Bar Content -->
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#top-navbar"
+            aria-controls="top-navbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <div class="d-flex justify-content-between p-3">
+              <img id="logo_2" class="logo" src="imgs/logo-0١.png" alt="logo" />
+              <i class="close_icon fa-regular fa-circle-xmark"></i>
+            </div>
+          </button>
+          <ul class="navbar-nav ms-lg-auto p-4 p-lg-0" style="gap: 30px">
+            <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+              <a class="nav-link p-2" href="index.html#who_we_are">من نحن</a>
+            </li>
+            <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+              <a class="nav-link p-2" href="index.html#team-slider"
+                >فريق الإدارة</a
+              >
+            </li>
+            <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+              <a class="nav-link p-2" href="index.html#service">خدماتنا</a>
+            </li>
+            <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+              <a class="nav-link p-2" href="index.html#why_Us">لماذا نحن</a>
+            </li>
+
+            <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+              <a class="nav-link p-2" href="blogs.html">المدونة</a>
+            </li>
+
+            <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+              <a class="nav-link p-2" href="#contact_us">تواصل معنا</a>
+            </li>
+            <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
+              <a
+                class="nav-link p-2"
+                href="index-en.html"
+                id="langToggle"
+                onclick="switchToEnglish(); return false;"
+                title="تبديل اللغة"
+                >English</a
+              >
+            </li>
+          </ul>
+        </div>
         <!-- From Uiverse.io by Madflows -->
         <div class="toggle-switch">
           <label class="switch-label">
@@ -59,43 +106,6 @@
             />
             <span class="slider"></span>
           </label>
-        </div>
-
-        <div class="collapse navbar-collapse" id="main">
-          <ul class="navbar-nav mr-auto" style="gap: 30px">
-            <li class="nav-item">
-              <a class="nav-link p-2" href="index.html#who_we_are">من نحن</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link p-2" href="index.html#team-slider"
-                >فريق الإدارة</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link p-2" href="index.html#service">خدماتنا</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link p-2" href="index.html#why_Us">لماذا نحن</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link p-2" href="blogs.html">المدونة</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link p-2" href="#contact_us">تواصل معنا</a>
-            </li>
-
-            <li class="nav-item">
-              <a
-                class="nav-link p-2"
-                href="blog-11-en.html"
-                id="langToggle"
-                onclick="switchToEnglish(); return false;"
-                title="تبديل اللغة"
-                >English</a
-              >
-            </li>
-          </ul>
         </div>
       </div>
     </nav>
