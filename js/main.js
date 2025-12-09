@@ -128,7 +128,7 @@ function darkmode() {
     theme = "DARK";
     // SetTheme.style.backgroundImage = "url(../imgs/bg.png)";
     // SetTheme.style.backgroundColor = "#022f35";
-    SetTheme.style.backgroundImage = "url('../imgs/EEA-Dback.png')";
+    SetTheme.style.backgroundImage = "url('../imgs/eeaDback.png')";
 
     if (logo) logo.src = "imgs/png.png";
     if (logo2) logo2.src = "imgs/png.png";
@@ -137,7 +137,7 @@ function darkmode() {
     theme = "LIGHT";
     // SetTheme.style.backgroundImage = "url(../imgs/back.png)";
     // SetTheme.style.backgroundColor = "#ffffff";
-    SetTheme.style.backgroundImage = "url('../imgs/EEA-back.png')";
+    SetTheme.style.backgroundImage = "url('../imgs/eeaBack.png')";
 
     if (logo) logo.src = "imgs/logo-0١.png";
     if (logo2) logo2.src = "imgs/logo-0١.png";
@@ -161,14 +161,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (theme === "DARK") {
       // SetTheme.style.backgroundImage = "url(../imgs/bg.png)";
       // SetTheme.style.backgroundColor = "#022f35";
-      SetTheme.style.backgroundImage = "url('../imgs/EEA-Dback.png')";
+      SetTheme.style.backgroundImage = "url('../imgs/eeaDback.png')";
 
       if (logo) logo.src = "imgs/png.png";
       if (logo2) logo2.src = "imgs/png.png";
     } else {
       // SetTheme.style.backgroundImage = "url(../imgs/back.png)";
       // SetTheme.style.backgroundColor = "#ffffff";
-      SetTheme.style.backgroundImage = "url('../imgs/EEA-back.png')";
+      SetTheme.style.backgroundImage = "url('../imgs/eeaBack.png')";
+
       if (logo) logo.src = "imgs/logo-0١.png";
       if (logo2) logo2.src = "imgs/logo-0١.png";
     }
