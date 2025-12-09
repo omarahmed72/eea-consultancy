@@ -55,8 +55,8 @@ html {
 
 body {
   font-family: "myFirstFont";
-  /* background-color: var(--primary-color); */
-  background-image: url("../imgs/EEA-back.png");
+  background-color: var(--secondary-color);
+  /* background-image: url("../imgs/EEA-back.png"); */
   /* background:#000000; */
   background-size: cover;
   background-blend-mode: linear-burn;
