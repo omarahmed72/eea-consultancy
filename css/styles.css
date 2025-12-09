@@ -242,6 +242,16 @@ p {
   width: 100%;
 }
 
+.navbar-nav {
+  gap: 30px;
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    gap: 0px;
+  }
+}
+
 .nav-link {
   color: var(--primary-color);
   font-size: 13px;
