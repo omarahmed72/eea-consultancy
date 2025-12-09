@@ -127,7 +127,8 @@ function darkmode() {
     console.log("Dark Theme Activated");
     theme = "DARK";
     // SetTheme.style.backgroundImage = "url(../imgs/bg.png)";
-    SetTheme.style.backgroundColor = "#000000";
+    // SetTheme.style.backgroundColor = "#000000";
+    SetTheme.style.backgroundImage = "url(../imgs/EEA-Dback.png)";
 
     if (logo) logo.src = "imgs/png.png";
     if (logo2) logo2.src = "imgs/png.png";
@@ -135,7 +136,8 @@ function darkmode() {
     console.log("Light Theme Activated");
     theme = "LIGHT";
     // SetTheme.style.backgroundImage = "url(../imgs/back.png)";
-    SetTheme.style.backgroundColor = "#ffffff";
+    // SetTheme.style.backgroundColor = "#ffffff";
+    SetTheme.style.backgroundImage = "url(../imgs/EEA-back.png)";
 
     if (logo) logo.src = "imgs/logo-0١.png";
     if (logo2) logo2.src = "imgs/logo-0١.png";
@@ -158,13 +160,15 @@ document.addEventListener("DOMContentLoaded", function () {
   function applyAssets(theme) {
     if (theme === "DARK") {
       // SetTheme.style.backgroundImage = "url(../imgs/bg.png)";
-      SetTheme.style.backgroundColor = "#000000";
+      // SetTheme.style.backgroundColor = "#000000";
+      SetTheme.style.backgroundImage = "url(../imgs/EEA-Dback.png)";
 
       if (logo) logo.src = "imgs/png.png";
       if (logo2) logo2.src = "imgs/png.png";
     } else {
       // SetTheme.style.backgroundImage = "url(../imgs/back.png)";
-      SetTheme.style.backgroundColor = "#ffffff";
+      // SetTheme.style.backgroundColor = "#ffffff";
+      SetTheme.style.backgroundImage = "url(../imgs/EEA-back.png)";
       if (logo) logo.src = "imgs/logo-0١.png";
       if (logo2) logo2.src = "imgs/logo-0١.png";
     }
