@@ -83,6 +83,25 @@ p {
   color: var(--primary-color); /* Bootstrap secondary gray */
 }
 
+h1 span {
+  background: linear-gradient(
+    243deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animated-gradient 2.5s linear infinite;
+}
+@keyframes animated-gradient {
+  to {
+    background-position: 200%;
+  }
+}
+
 .btn {
   background: var(--primary-color);
   color: var(--secondary-color);
