@@ -69,7 +69,6 @@ body {
   overflow-x: hidden;
 }
 
-h1,
 h2,
 h3,
 h4,
@@ -83,20 +82,26 @@ p {
   color: var(--primary-color); /* Bootstrap secondary gray */
 }
 
+h1,
 h1 span {
   background: linear-gradient(
     243deg,
-    var(--primary-color),
     var(--secondary-color),
     var(--primary-color),
-    var(--secondary-color)
+    var(--secondary-color),
+    var(--primary-color)
   );
-  background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: animated-gradient 2.5s linear infinite;
+  background-clip: text;
+  color: transparent;
+  background-size: 200%;
+  animation: animate 5s linear infinite;
 }
-@keyframes animated-gradient {
+
+@keyframes animate {
+  from {
+    background-position: 0;
+  }
   to {
     background-position: 200%;
   }
@@ -758,17 +763,12 @@ img#logo_2 {
 
 .why_Us .why_Us_header {
   font-size: 4.5rem;
-  color: var(--primary-color);
 }
 
 @media (max-width: 767px) {
   .why_Us .why_Us_header {
     font-size: 53px;
   }
-}
-
-.why_Us .why_Us_header span {
-  color: var(--secondary-color);
 }
 
 /* Blinking cursor */
